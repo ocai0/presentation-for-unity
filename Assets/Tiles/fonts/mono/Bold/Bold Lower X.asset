@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+  m_Name: Bold Lower X
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: 21300000, guid: 34a78259b8edb0d4193f175c02f94caa, type: 3}
+  m_DefaultGameObject: {fileID: 7704548675339340346, guid: 7e1181c6557da564ca6f7267eef312c4, type: 3}
+  m_DefaultColliderType: 0
+  m_TilingRules: []

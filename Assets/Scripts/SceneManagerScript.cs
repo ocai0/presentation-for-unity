@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneManagerScript : MonoBehaviour {
     public static SceneManagerScript instance;
+    public string mode = "GAME";
     void Awake() {
         if(instance != null && instance != this) {
             Destroy(gameObject);
@@ -11,16 +12,29 @@ public class SceneManagerScript : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
     void Update() {
-        if(Input.GetKeyDown(KeyCode.N)) {
-            Debug.Log("Next");
-            NextScene();
+        if(mode == "SLIDE") {
+            if(Input.GetKeyDown(KeyCode.RightArrow)) {
+                Debug.Log("Next");
+                NextScene();
+            }
+            if(Input.GetKeyDown(KeyCode.LeftArrow)) {
+                Debug.Log("Previous");
+                PreviousScene();
+            }
+            if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return)) {
+                Debug.Log("Exit Slide Mode");
+                mode = "GAME";
+            }
         }
-        if(Input.GetKeyDown(KeyCode.P)) {
-            Debug.Log("Previous");
-            PreviousScene();
+        else {
+            if(Input.GetKeyDown(KeyCode.Escape)) {
+                Debug.Log("Exit Game Mode");
+                mode = "SLIDE";
+            }
         }
     }
     void NextScene() {
+        Debug.Log(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1));
         if(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1) != null)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
