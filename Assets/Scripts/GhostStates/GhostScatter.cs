@@ -1,4 +1,4 @@
 using UnityEngine;
 
-public class GhostScatter : GhostBehaviour {
+public class GhostScatter : GhostBehavior {
 }

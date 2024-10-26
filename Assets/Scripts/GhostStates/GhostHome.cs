@@ -1,4 +1,4 @@
 using UnityEngine;
 
-public class GhostHome : GhostBehaviour {
+public class GhostHome : GhostBehavior {
 }

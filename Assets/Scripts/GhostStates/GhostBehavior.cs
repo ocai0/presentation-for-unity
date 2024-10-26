@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Ghost))]
-public abstract class GhostBehaviour : MonoBehavior {
+public abstract class GhostBehavior : MonoBehaviour {
     public Ghost ghost { get; private set; }
     public float duration;
     private void Awake() {
@@ -9,7 +9,7 @@ public abstract class GhostBehaviour : MonoBehavior {
         this.enabled = false;
     }
     public void Enable() {
-        EnableDuration(this.duration);
+        Enable(this.duration);
     }
     public virtual void Enable(float duration) {
         this.enabled = true;
