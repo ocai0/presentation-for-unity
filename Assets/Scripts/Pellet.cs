@@ -10,12 +10,4 @@ public class Pellet : MonoBehaviour {
     protected virtual void Eat() {
         FindObjectOfType<GameManager>().PelletEaten(this);
     }
-    void Start() {
-        
-    }
-
-    // Update is called once per frame
-    void Update() {
-        
-    }
 }
