@@ -75,5 +75,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhostPinky
       objectReference: {fileID: 0}
+    - target: {fileID: 9115735325586014043, guid: 103b1850c1fca0d47b28b00b047a5d19, type: 3}
+      propertyPath: initialBehavior
+      value: 
+      objectReference: {fileID: 1290385262486993544}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 103b1850c1fca0d47b28b00b047a5d19, type: 3}
+--- !u!114 &1290385262486993544 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5884843316318202806, guid: 103b1850c1fca0d47b28b00b047a5d19, type: 3}
+  m_PrefabInstance: {fileID: 4630676087915270462}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee74d028509e95741a72d324035970cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
