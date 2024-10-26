@@ -484,6 +484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c627ae9e018a4d4ea059cdaba9b75ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialBehavior: {fileID: 0}
+  target: {fileID: 0}
   points: 200
 --- !u!114 &3839755891881924888
 MonoBehaviour:
@@ -518,6 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28a71509287634468806b63f65ce5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 20
 --- !u!114 &1824454443503057035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099b4ffd3af05cf4ba9b6275b866cb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 8
 --- !u!114 &5884843316318202806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee74d028509e95741a72d324035970cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 0
 --- !u!114 &9169447026302616856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,3 +559,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5501277d3ebc234e92dbad83a069bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 7
