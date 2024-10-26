@@ -16,10 +16,11 @@ public class Ghost : MonoBehaviour {
         this.scatter = GetComponent<GhostScatter>();
         this.chase = GetComponent<GhostChase>();
         this.frightned = GetComponent<GhostFrightned>();
+        this.target = GameObject.Find("Pacman").GetComponent<Pacman>().transform;
     }
 
     private void Start() {
-
+        ResetState();
     }
 
     public void ResetState()  {
