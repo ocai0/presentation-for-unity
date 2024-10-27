@@ -11,14 +11,14 @@ public class Passage : MonoBehaviour {
         // }
 
         Pacman pacman = other.GetComponent<Pacman>();
-        if(pacman.movement.bypassConnectionEnterCheck) {
+        if(pacman && pacman.movement.bypassConnectionEnterCheck) {
             pacman.movement.bypassConnectionEnterCheck = false;
             pacman.movement.bypassConnectionExitCheck = true;
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
         Pacman pacman = other.GetComponent<Pacman>();
-        if(pacman.movement.bypassConnectionExitCheck) {
+        if(pacman && pacman.movement.bypassConnectionExitCheck) {
             pacman.movement.bypassConnectionExitCheck = false;
         }
         else {
@@ -27,6 +27,7 @@ public class Passage : MonoBehaviour {
             if(pacman) {
                 directionXAxis = pacman.movement.direction.x;
                 directionYAxis = pacman.movement.direction.y;
+                pacman.movement.bypassConnectionEnterCheck = true;
             }
             else {
                 Ghost ghost = other.GetComponent<Ghost>();
@@ -38,7 +39,6 @@ public class Passage : MonoBehaviour {
             newPosition.y = this.connection.transform.position.y - (connectionSize.y/2 * directionYAxis);
 
             other.transform.position = newPosition;
-            pacman.movement.bypassConnectionEnterCheck = true;
         }
     }
 
