@@ -1,13 +1,23 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public Ghost[] ghosts;
-    public Pacman pacman;
-    public Transform pellets;
+    private List<Ghost> ghosts = new List<Ghost>();
+    private Pacman pacman;
+    private Transform pellets;
     public int score { get; private set; }
     public int lives { get; private set; }
     public int ghostMultiplier { get; private set; } = 1;
+    
+    private void Awake() {
+        var ghostsInScene = FindObjectsOfType(typeof(Ghost));
+        foreach(Ghost ghost in ghostsInScene) this.ghosts.Add(ghost);
+
+        this.pellets = GameObject.Find("/Grid/Pellets").GetComponent<Transform>();
+        this.pacman = GameObject.Find("Pacman").GetComponent<Pacman>();
+    }
+
     void Start() {
         NewGame();
     }
@@ -33,7 +43,7 @@ public class GameManager : MonoBehaviour {
 
     private void ResetActors() {
         ResetGhostMultiplier();
-        for(int i = 0; i < this.ghosts.Length; i++) {
+        for(int i = 0; i < this.ghosts.Count; i++) {
             if(this.ghosts[i]) this.ghosts[i].ResetState();
         }
 
@@ -41,7 +51,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void GameOver() {
-        for(int i = 0; i < this.ghosts.Length; i++) {
+        for(int i = 0; i < this.ghosts.Count; i++) {
             if(this.ghosts[i]) this.ghosts[i].gameObject.SetActive(false);
         }
  
@@ -81,7 +91,7 @@ public class GameManager : MonoBehaviour {
         }
     }
     public void PowerPelletEaten(PowerPellet pellet) {
-        for(int i = 0; i < this.ghosts.Length; i++) {
+        for(int i = 0; i < this.ghosts.Count; i++) {
             if(this.ghosts[i]) this.ghosts[i].frightned.Enable(pellet.duration);
         }
         PelletEaten(pellet);
