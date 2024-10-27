@@ -4,11 +4,11 @@ using UnityEngine;
 public class Passage : MonoBehaviour {
     public GameObject connection;
     private void OnTriggerEnter2D(Collider2D other) {
-        // Ghost ghost = other.GetComponent<Ghost>();
-        // if(ghost != null) {
-        //     SlowDownGhost(ghost);
-        //     return;
-        // }
+        Ghost ghost = other.GetComponent<Ghost>();
+        if(ghost && ghost.movement.bypassConnectionEnterCheck) {
+            ghost.movement.bypassConnectionEnterCheck = false;
+            ghost.movement.bypassConnectionExitCheck = true;
+        }
 
         Pacman pacman = other.GetComponent<Pacman>();
         if(pacman && pacman.movement.bypassConnectionEnterCheck) {
@@ -18,27 +18,42 @@ public class Passage : MonoBehaviour {
     }
     private void OnTriggerExit2D(Collider2D other) {
         Pacman pacman = other.GetComponent<Pacman>();
-        if(pacman && pacman.movement.bypassConnectionExitCheck) {
-            pacman.movement.bypassConnectionExitCheck = false;
-        }
-        else {
-            Vector2 connectionSize = this.connection.GetComponent<BoxCollider2D>().size;
-            float directionXAxis = 0.0f, directionYAxis = 0.0f;
-            if(pacman) {
-                directionXAxis = pacman.movement.direction.x;
-                directionYAxis = pacman.movement.direction.y;
-                pacman.movement.bypassConnectionEnterCheck = true;
+        if(pacman) {
+            if(pacman.movement.bypassConnectionExitCheck) {
+                pacman.movement.bypassConnectionExitCheck = false;
             }
             else {
-                Ghost ghost = other.GetComponent<Ghost>();
-                directionXAxis = ghost.movement.direction.x;
-                directionYAxis = ghost.movement.direction.y;
-            }
-            Vector3 newPosition = other.transform.position;
-            newPosition.x = this.connection.transform.position.x;
-            newPosition.y = this.connection.transform.position.y - (connectionSize.y/2 * directionYAxis);
+                Vector2 connectionSize = this.connection.GetComponent<BoxCollider2D>().size;
+                float directionXAxis = pacman.movement.direction.x;
+                float directionYAxis = pacman.movement.direction.y;
+                
+                pacman.movement.bypassConnectionEnterCheck = true;
 
-            other.transform.position = newPosition;
+                Vector3 newPosition = other.transform.position;
+                newPosition.x = this.connection.transform.position.x;
+                newPosition.y = this.connection.transform.position.y - (connectionSize.y/2 * directionYAxis);
+
+                other.transform.position = newPosition;
+            }
+        }
+        Ghost ghost = other.GetComponent<Ghost>();
+        if(ghost) {
+            if(ghost.movement.bypassConnectionExitCheck) {
+                ghost.movement.bypassConnectionExitCheck = false;
+            }
+            else {
+                Vector2 connectionSize = this.connection.GetComponent<BoxCollider2D>().size;
+                float directionXAxis = ghost.movement.direction.x;
+                float directionYAxis = ghost.movement.direction.y;
+                
+                ghost.movement.bypassConnectionEnterCheck = true;
+
+                Vector3 newPosition = other.transform.position;
+                newPosition.x = this.connection.transform.position.x;
+                newPosition.y = this.connection.transform.position.y - (connectionSize.y/2 * directionYAxis);
+
+                other.transform.position = newPosition;
+            }
         }
     }
 
