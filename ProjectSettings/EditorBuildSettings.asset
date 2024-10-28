@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Slide 1.unity
+  - enabled: 0
+    path: Assets/Scenes/Slide 0.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/Slide 1.unity
+    guid: de29dcadc72850e4da23494fb05e62fd
+  - enabled: 0
+    path: Assets/Scenes/Slide 2.unity
+    guid: 2c5353b10bb6ce34dad27c83eff543f4
   m_configObjects: {}

@@ -4,12 +4,18 @@ using UnityEngine;
 public class GhostHome : GhostBehavior {
     public Transform inside;
     public Transform outside;
-    
+    private bool isDestroying;
 
+    private void OnDestroy() {
+        Debug.Log("On Destroy");
+        StopAllCoroutines();
+        this.isDestroying = true;
+    }
     private void OnEnable() {
         StopAllCoroutines();
     }
     private void OnDisable() {
+        if(this.isDestroying) return;
         StartCoroutine(ExitTransition());
     }
     private void OnCollisionEnter2D(Collision2D collision) {

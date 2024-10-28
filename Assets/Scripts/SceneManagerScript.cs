@@ -2,44 +2,58 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneManagerScript : MonoBehaviour {
     public static SceneManagerScript instance;
-    public string mode = "GAME";
+    public string mode = "SLIDE";
+    private int sceneIndex = 0;
     void Awake() {
+        Debug.Log("SceneManager.loadedSceneCount: " + SceneManager.sceneCount);
         if(instance != null && instance != this) {
             Destroy(gameObject);
             return;
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
     }
     void Update() {
         if(mode == "SLIDE") {
             if(Input.GetKeyDown(KeyCode.RightArrow)) {
-                Debug.Log("Next");
                 NextScene();
             }
             if(Input.GetKeyDown(KeyCode.LeftArrow)) {
-                Debug.Log("Previous");
                 PreviousScene();
             }
             if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return)) {
-                Debug.Log("Exit Slide Mode");
                 mode = "GAME";
             }
         }
         else {
             if(Input.GetKeyDown(KeyCode.Escape)) {
-                Debug.Log("Exit Game Mode");
                 mode = "SLIDE";
             }
         }
     }
     void NextScene() {
-        Debug.Log(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1));
-        if(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1) != null)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StopAllCoroutines();
+        goToScene(this.sceneIndex + 1);
     }
     void PreviousScene() {
-        if(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex - 1) != null)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        StopAllCoroutines();
+        goToScene(this.sceneIndex - 1);
+    }
+    private void goToScene(int index) {
+        if(index < 0) index = 0;
+        if(index > 1) index = 1;
+
+        Debug.Log("ScenePath: '" + "Assets/Scenes/Slide " + index + "'");
+        Scene nextScene = SceneManager.GetSceneByPath("Assets/Scenes/Slide " + index);
+        Debug.Log(nextScene.name);
+        if(nextScene.isValid()) Debug.Log("Scene is valid");
+
+        // try {
+        //     SceneManager.LoadScene(this.SLIDES[index]);
+        //     this.sceneIndex = index;
+        // }
+        // catch(System.Exception e) {
+        //     Debug.Log(e.Message);
+        // }
     }
 }
