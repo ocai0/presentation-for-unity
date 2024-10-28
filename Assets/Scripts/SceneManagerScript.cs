@@ -46,7 +46,7 @@ public class SceneManagerScript : MonoBehaviour {
         Debug.Log("ScenePath: '" + "Assets/Scenes/Slide " + index + "'");
         Scene nextScene = SceneManager.GetSceneByPath("Assets/Scenes/Slide " + index);
         Debug.Log(nextScene.name);
-        if(nextScene.isValid()) Debug.Log("Scene is valid");
+        // if(nextScene.isValid()) Debug.Log("Scene is valid");
 
         // try {
         //     SceneManager.LoadScene(this.SLIDES[index]);
