@@ -43,17 +43,10 @@ public class SceneManagerScript : MonoBehaviour {
         if(index < 0) index = 0;
         if(index > 1) index = 1;
 
-        Debug.Log("ScenePath: '" + "Assets/Scenes/Slide " + index + "'");
-        Scene nextScene = SceneManager.GetSceneByPath("Assets/Scenes/Slide " + index);
-        Debug.Log(nextScene.name);
-        // if(nextScene.isValid()) Debug.Log("Scene is valid");
-
-        // try {
-        //     SceneManager.LoadScene(this.SLIDES[index]);
-        //     this.sceneIndex = index;
-        // }
-        // catch(System.Exception e) {
-        //     Debug.Log(e.Message);
-        // }
+        // var ghostsInScene = FindObjectsOfType(typeof(Ghost));
+        // foreach(Ghost ghost in ghostsInScene) ghost.StopCoroutines();
+        
+        SceneManager.LoadScene(index);
+        this.sceneIndex = index;
     }
 }

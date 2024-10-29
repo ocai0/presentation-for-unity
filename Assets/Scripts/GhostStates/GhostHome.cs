@@ -4,18 +4,11 @@ using UnityEngine;
 public class GhostHome : GhostBehavior {
     public Transform inside;
     public Transform outside;
-    private bool isDestroying;
 
-    private void OnDestroy() {
-        Debug.Log("On Destroy");
-        StopAllCoroutines();
-        this.isDestroying = true;
-    }
     private void OnEnable() {
         StopAllCoroutines();
     }
     private void OnDisable() {
-        if(this.isDestroying) return;
         StartCoroutine(ExitTransition());
     }
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -54,5 +47,8 @@ public class GhostHome : GhostBehavior {
         this.ghost.movement.SetDirection(new Vector2(Random.value < .5f ? -1.0f : 1.0f, 0.0f), true);
         this.ghost.movement.rigidbody.isKinematic = false;
         this.ghost.movement.enabled = true;
+    }
+    public void StopCoroutines() {
+        StopAllCoroutines();
     }
 }
