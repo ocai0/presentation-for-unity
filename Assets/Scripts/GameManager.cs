@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour {
     public int ghostMultiplier { get; private set; } = 1;
     
     private void Awake() {
-        // Debug.Log("GameManager: Awake");
         var ghostsInScene = FindObjectsOfType(typeof(Ghost));
         foreach(Ghost ghost in ghostsInScene) this.ghosts.Add(ghost);
         this.pellets = GameObject.Find("/Grid/Pellets").GetComponent<Transform>();
@@ -19,7 +18,6 @@ public class GameManager : MonoBehaviour {
     }
 
     void Start() {
-        // Debug.Log("GameManager: Start");
         NewGame();
     }
     void Update() {

@@ -5,7 +5,6 @@ public class SceneManagerScript : MonoBehaviour {
     public string mode = "SLIDE";
     private int sceneIndex = 0;
     void Awake() {
-        Debug.Log("SceneManager.loadedSceneCount: " + SceneManager.sceneCount);
         if(instance != null && instance != this) {
             Destroy(gameObject);
             return;
@@ -43,8 +42,8 @@ public class SceneManagerScript : MonoBehaviour {
         if(index < 0) index = 0;
         if(index > 1) index = 1;
 
-        // var ghostsInScene = FindObjectsOfType(typeof(Ghost));
-        // foreach(Ghost ghost in ghostsInScene) ghost.StopCoroutines();
+        var ghostsInScene = FindObjectsOfType(typeof(Ghost));
+        foreach(Ghost ghost in ghostsInScene) ghost.home.StopCoroutines();
         
         SceneManager.LoadScene(index);
         this.sceneIndex = index;

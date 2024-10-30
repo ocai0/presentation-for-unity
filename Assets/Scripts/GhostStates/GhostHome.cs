@@ -4,6 +4,7 @@ using UnityEngine;
 public class GhostHome : GhostBehavior {
     public Transform inside;
     public Transform outside;
+    public bool forceKill = false;
 
     private void OnEnable() {
         StopAllCoroutines();
@@ -27,6 +28,7 @@ public class GhostHome : GhostBehavior {
         float timeElapsed = 0f;
 
         while(timeElapsed < duration) {
+            if(this.forceKill) yield break;
             Vector3 newPosition = Vector3.Lerp(position, this.inside.position, timeElapsed / duration);
             newPosition.z = position.z;
             this.ghost.transform.position = newPosition;
@@ -37,6 +39,7 @@ public class GhostHome : GhostBehavior {
         timeElapsed = 0.0f;
 
         while(timeElapsed < duration) {
+            if(this.forceKill) yield break;
             Vector3 newPosition = Vector3.Lerp(this.inside.position, this.outside.position, timeElapsed / duration);
             newPosition.z = position.z;
             this.ghost.transform.position = newPosition;
@@ -50,5 +53,6 @@ public class GhostHome : GhostBehavior {
     }
     public void StopCoroutines() {
         StopAllCoroutines();
+        this.forceKill = true;
     }
 }
