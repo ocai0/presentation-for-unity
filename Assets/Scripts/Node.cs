@@ -4,6 +4,7 @@ using UnityEngine;
 public class Node : MonoBehaviour {
     public LayerMask obstacleLayer;
     public List<Vector2> avaiableDirections { get; private set; }
+    public Vector2 forcePacmanOnDirection;
     private void Start() {
         this.avaiableDirections = new List<Vector2>();
 

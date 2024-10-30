@@ -22,11 +22,15 @@ public class SceneManagerScript : MonoBehaviour {
             }
             if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return)) {
                 mode = "GAME";
+                Pacman pacman = (Pacman) FindObjectOfType(typeof(Pacman));
+                pacman.autopilot = false;
             }
         }
         else {
             if(Input.GetKeyDown(KeyCode.Escape)) {
+                Pacman pacman = (Pacman) FindObjectOfType(typeof(Pacman));
                 mode = "SLIDE";
+                pacman.autopilot = true;
             }
         }
     }
