@@ -15,13 +15,14 @@ public class Pacman : MonoBehaviour {
         if(!this.autopilot) {
             this.HandleUserInteration();
         }
+        this.SetSpriteRotation();
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if(!this.autopilot) return;
         Node node = other.GetComponent<Node>();
         if(node == null) return;
 
-        if(node.forcePacmanOnDirection.x != 0 && node.forcePacmanOnDirection.y != 0) {
+        if(node.forcePacmanOnDirection.x != 0 || node.forcePacmanOnDirection.y != 0) {
             this.movement.SetDirection(node.forcePacmanOnDirection);
         }
         else {
@@ -32,7 +33,6 @@ public class Pacman : MonoBehaviour {
             }
             this.movement.SetDirection(node.avaiableDirections[index]);
         }
-        this.SetSpriteRotation();
     }
     private void HandleUserInteration() {
         if(Input.GetKeyDown(KeyCode.UpArrow)) {
@@ -47,11 +47,11 @@ public class Pacman : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.RightArrow)) {
             this.movement.SetDirection(Vector2.right);
         }
-        this.SetSpriteRotation();
     }
     private void SetSpriteRotation() {
         float angle = Mathf.Atan2(this.movement.direction.y, this.movement.direction.x);
         this.transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
+        // if(this.autopilot) this.transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(this.movement.nextDirection.y, this.movement.nextDirection.x) * Mathf.Rad2Deg, Vector3.forward);
     }
     public void ResetState() {
         this.gameObject.SetActive(true);
