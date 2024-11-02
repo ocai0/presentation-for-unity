@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 public class SceneManagerScript : MonoBehaviour {
     public static SceneManagerScript instance;
     public string mode = "SLIDE";
-    private int sceneIndex = 0;
+    public int sceneIndex = 0;
     void Awake() {
         if(instance != null && instance != this) {
             Destroy(gameObject);
@@ -44,12 +44,14 @@ public class SceneManagerScript : MonoBehaviour {
     }
     private void goToScene(int index) {
         if(index < 0) index = 0;
-        if(index > 1) index = 1;
+        if(index > SceneManager.sceneCountInBuildSettings - 1) index = SceneManager.sceneCountInBuildSettings -1;
+        Debug.Log("SceneManager.sceneCountInBuildSettings: " + SceneManager.sceneCountInBuildSettings);
+        Debug.Log("index: " + index);
 
+        this.sceneIndex = index;
         var ghostsInScene = FindObjectsOfType(typeof(Ghost));
         foreach(Ghost ghost in ghostsInScene) ghost.home.StopCoroutines();
         
         SceneManager.LoadScene(index);
-        this.sceneIndex = index;
     }
 }
