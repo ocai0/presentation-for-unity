@@ -7,11 +7,11 @@ Possui muitos recursos que facilitam o desenvolvimento dessas aplicações
  - Iluminação
 
 2. A história da Unity
- - Em 2005 ela foi criada por David Helgason, inicialmente para ser uma ferramenta voltada para desenvolvimento 3D no Mac
- - Em 2008 Ganha suporte multiplataforma
- - Em 2009 houve melhorias na renderização da luz e sombra, além de otimizações nas simulações físicas
- - Em 2012 passou a suportar desenvolvimento de jogos 2D
- - Nos últimos tempos, diversas melhorias sobre renderização e otimização foram feitas. Além disso, aumenta-se o suporte para execução na web, fluxo de trabalho multiplayer de ponta-a-ponta entre outros
+Em 2005 ela foi criada por David Helgason, inicialmente para ser uma ferramenta voltada para desenvolvimento 3D no Mac
+Em 2008 Ganha suporte multiplataforma
+Em 2009 houve melhorias na renderização da luz e sombra, além de otimizações nas simulações físicas
+Em 2012 passou a suportar desenvolvimento de jogos 2D
+Nos últimos tempos, diversas melhorias sobre renderização e otimização foram feitas. Além disso, aumenta-se o suporte para execução na web, fluxo de trabalho multiplayer de ponta-a-ponta entre outros
 
 3. Por que usar?
 Altamente flexível, auxilia na criação de qualquer gênero de jogo e o exporta para várias plataformas
@@ -34,13 +34,13 @@ Limita seu jogo as capacidades da ferramenta, podendo não ser adequada para o d
 Toda a apresentação até agora
 
 7. Uso no mercado atual
-- Amplamente usado por desenvolvedores indie
-- Muito usado em jogos mobile, devido sua característica multiplataforma
-- Majoritariamente usado no mercado de games atual, tendo uma adesão de uso superior a de concorrentes como a Unreal Engine
+Amplamente usado por desenvolvedores indie
+Muito usado em jogos mobile, devido sua característica multiplataforma
+Majoritariamente usado no mercado de games atual, tendo uma adesão de uso superior a de concorrentes como a Unreal Engine
 
 8. Alguns jogos criados com a Unity
 
 9. Unity contra outras engines
-- Unreal Engine é uma poderosa ferramenta comparada a unity, possuindo um motor gráfico mais robusto. Mas esse maior poder de renderização tem como custo uma maior curva de aprendizado do que a unity
-- Godot possui uma curva de aprendizado menor, é mais leve e de código aberto, mas não possui a mesma quantidade de recursos desenvolvidos (assets, tutoriais, desenvolvimento da comunidade)
-- CryEngine possui uma capacidade gráfica maior, mas não é tão flexivel quanto a unity, além de ter uma complexidade maior para usá-la
+Unreal Engine é uma poderosa ferramenta comparada a unity, possuindo um motor gráfico mais robusto. Mas esse maior poder de renderização tem como custo uma maior curva de aprendizado do que a unity
+Godot possui uma curva de aprendizado menor, é mais leve e de código aberto, mas não possui a mesma quantidade de recursos desenvolvidos (assets, tutoriais, desenvolvimento da comunidade)
+CryEngine possui uma capacidade gráfica maior, mas não é tão flexivel quanto a unity, além de ter uma complexidade maior para usá-la

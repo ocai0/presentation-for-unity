@@ -12,6 +12,48 @@ EditorBuildSettings:
     path: Assets/Scenes/Slide 1.unity
     guid: db385b5558db73e4c99a8cee1c208283
   - enabled: 1
+    path: Assets/Scenes/Slide 2.unity
+    guid: a81b46f3b3ab2a744ab6797cc6b9d161
+  - enabled: 1
+    path: Assets/Scenes/Slide 3.unity
+    guid: 9be218bfd67902448bdec516bc381ee6
+  - enabled: 1
+    path: Assets/Scenes/Slide 4.unity
+    guid: 01be4b48b95284745a30ffd4ca3847ed
+  - enabled: 1
+    path: Assets/Scenes/Slide 5.unity
+    guid: 63b7bfd5030ab734cb59d77e66bf2dd7
+  - enabled: 1
+    path: Assets/Scenes/Slide 6.unity
+    guid: 3eaa9a7f77d8ccb438d72652cdcf8596
+  - enabled: 1
+    path: Assets/Scenes/Slide 7.unity
+    guid: 55c81b804fdc52844a99e4bcd422afa0
+  - enabled: 1
+    path: Assets/Scenes/Slide 8.unity
+    guid: b2e14bd0802399b42aa44a8891d86148
+  - enabled: 1
+    path: Assets/Scenes/Slide 9.unity
+    guid: 2a7b834c1c869964db56d35b6a9aabd0
+  - enabled: 1
+    path: Assets/Scenes/Slide 10.unity
+    guid: 4a88cec14fc60c04da37d90e624bd438
+  - enabled: 1
+    path: Assets/Scenes/Slide 11.unity
+    guid: 1f3f77d99f2651f40acd14e5e8f62d9e
+  - enabled: 1
+    path: Assets/Scenes/Slide Template 12.unity
+    guid: 4e658259c4ff5714ba3fb5198837df86
+  - enabled: 1
+    path: Assets/Scenes/Slide Template 13.unity
+    guid: 39975e130c006bb4d90d2c3a2087cb75
+  - enabled: 1
+    path: Assets/Scenes/Slide Template 14.unity
+    guid: dc5bb70628444c74fa3642646b59cf89
+  - enabled: 1
+    path: Assets/Scenes/Slide Template 15.unity
+    guid: 21396a4a6fa8ea44f859e65867cde294
+  - enabled: 1
     path: Assets/Scenes/Game Demo.unity
     guid: 2c5353b10bb6ce34dad27c83eff543f4
   m_configObjects: {}
