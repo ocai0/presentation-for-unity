@@ -42,16 +42,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Slide 11.unity
     guid: 1f3f77d99f2651f40acd14e5e8f62d9e
   - enabled: 1
-    path: Assets/Scenes/Slide Template 12.unity
+    path: Assets/Scenes/Slide 12.unity
     guid: 4e658259c4ff5714ba3fb5198837df86
   - enabled: 1
-    path: Assets/Scenes/Slide Template 13.unity
+    path: Assets/Scenes/Slide 13.unity
     guid: 39975e130c006bb4d90d2c3a2087cb75
   - enabled: 1
-    path: Assets/Scenes/Slide Template 14.unity
+    path: Assets/Scenes/Slide 14.unity
     guid: dc5bb70628444c74fa3642646b59cf89
   - enabled: 1
-    path: Assets/Scenes/Slide Template 15.unity
+    path: Assets/Scenes/Slide 15.unity
     guid: 21396a4a6fa8ea44f859e65867cde294
   - enabled: 1
     path: Assets/Scenes/Game Demo.unity
